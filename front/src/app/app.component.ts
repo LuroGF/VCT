@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { StartComponent } from './shared/start/start.component';
+import { StartComponent } from './components/start/start.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -9,10 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, StartComponent, RouterLink, HttpClientModule],
+  imports: [CommonModule, StartComponent, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'front';
+  title = 'VCT TV';
 }

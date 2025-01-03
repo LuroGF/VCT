@@ -1,0 +1,79 @@
+<!-- Logo -->
+<div class="overflow-hidden" *ngIf="showLogo">
+  <div class="flex justify-center items-center h-screen bg-black">
+    <img
+      src="../../../assets/logos/fantasy.svg"
+      alt="Logo"
+      class="w-32 h-auto animate-fade-in"
+    />
+  </div>
+</div>
+<div *ngIf="!showLogo">
+  <!-- Header -->
+  <header
+    class="bg-gray-800 text-white py-4 px-6 flex items-center justify-between"
+  >
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img
+        src="../../../assets/logos/fantasy-h.svg"
+        alt="Logo"
+        class="w-10 h-10 mr-3"
+      />
+    </div>
+
+    <!-- Botones de navegación -->
+    <nav class="hidden md:flex gap-6">
+      <button
+        class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+      >
+        Inicio
+      </button>
+      <button
+        class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+      >
+        Jugadores
+      </button>
+      <button
+        class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+      >
+        Reglas
+      </button>
+    </nav>
+
+    <!-- Botón de Login -->
+    <button
+      class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
+    >
+      Login
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <div class="bg-black text-white flex md:flex-row">
+    <!-- Text Section -->
+    <div class="flex-1 flex-col w-2/3 px-4 py-4">
+      <div>
+        <h1 class="text-4xl font-bold mb-6">Bienvenido a VCT TV</h1>
+        <p class="text-lg leading-relaxed mb-4">
+          Crea tu equipo de ensueño con los mejores profesionales de la VCT.
+          ¡Compite contra tus amigos y demuestra quién es el mejor manager!
+        </p>
+        <button
+          class="text-lg bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded-lg"
+        >
+          ¡Descubrelo YA!
+        </button>
+      </div>
+    </div>
+
+    <!-- Image Section -->
+    <div class="hidden md:block w-1/3 h-auto">
+      <img
+        src="../../../assets/imagenes/madrid.svg"
+        alt="Madrid"
+        class="w-full h-screen object-cover"
+      />
+    </div>
+  </div>
+</div>
