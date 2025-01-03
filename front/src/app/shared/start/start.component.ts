@@ -13,16 +13,16 @@ export class StartComponent implements OnInit {
   isMobile: boolean = false;
 
   ngOnInit(): void {
-    this.checkScreenSize();
+    // this.checkScreenSize();
   }
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
-    this.checkScreenSize();
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event: Event) {
+  //   this.checkScreenSize();
+  // }
 
-  private checkScreenSize() {
-    this.isMobile = window.innerWidth <= 768; // Ajusta el umbral de acuerdo a tus necesidades
-  }
+  // private checkScreenSize() {
+  //   this.isMobile = window.innerWidth <= 768; // Ajusta el umbral de acuerdo a tus necesidades
+  // }
 
 
 }
