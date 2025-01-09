@@ -2,11 +2,13 @@
 <app-header></app-header>
 
 <!-- Main Content -->
-<div class="bg-black text-white px-6 py-8 h-screen">
+<div class="bg-black text-white px-6 py-8 min-h-screen overflow-y-auto">
   <!-- Buscador -->
   <div class="mb-6">
     <input
       type="text"
+      [(ngModel)]="searchQuery"
+      (input)="filterPlayers()"
       placeholder="Buscar jugador..."
       class="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-red-600"
     />
@@ -41,71 +43,42 @@
     </button>
   </div>
 
-  <!-- Selector de Equipos -->
-  <div class="mb-6">
+<!-- Selector de Equipos -->
+<div class="mb-6">
     <select
+      [(ngModel)]="selectedTeam"
+      (change)="filterByTeam()"
       class="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-red-600"
     >
       <option value="">Seleccionar equipo...</option>
-      <option value="team1">Equipo 1</option>
-      <option value="team2">Equipo 2</option>
-      <option value="team3">Equipo 3</option>
+      <option *ngFor="let team of availableTeams" [value]="team">
+        {{ team }}
+      </option>
     </select>
   </div>
-
+  
+  <!-- Lista de Jugadores Filtrados -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    <!-- Tarjeta de jugador -->
     <div
-      class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-row items-center sm:flex-col sm:items-stretch"
+      *ngFor="let jugador of filteredJugadores"
+      class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-row items-center sm:flex-col"
     >
-      <!-- Foto -->
       <img
-        src="../../../assets/jugadores/benji.svg"
-        alt="Player"
+        [src]="jugador.image"
+        [alt]="jugador.name"
         class="w-20 h-20 rounded-full mr-4 sm:mr-0 sm:mb-4 object-cover"
       />
-
-      <!-- Datos del jugador -->
       <div class="flex-1">
-        <h3 class="text-lg font-bold mb-1 text-white">Benjifishy</h3>
-        <p class="text-sm text-gray-400">Team Heretics</p>
+        <h3 class="text-lg font-bold mb-1 text-white text-center">{{ jugador.name }}</h3>
+        <p class="text-sm text-gray-400 text-center">{{ jugador.team }}</p>
       </div>
-
-      <!-- Botón de estadísticas -->
       <button
-        class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
-        (click)="showPlayerDetails('Player1')"
+        class="text-sm my-2 px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
+        (click)="showPlayerDetails(jugador.name)"
       >
         Ver Estadísticas
       </button>
     </div>
-
-    <!-- Repite esta tarjeta para otros jugadores -->
-    <div
-      class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-row items-center sm:flex-col sm:items-stretch"
-    >
-      <!-- Foto -->
-      <img
-        src="../../../assets/jugadores/boaster.svg"
-        alt="Player"
-        class="w-20 h-20 rounded-full mr-4 sm:mr-0 sm:mb-4 object-cover"
-      />
-
-      <!-- Datos del jugador -->
-      <div class="flex-1">
-        <h3 class="text-lg font-bold mb-1 text-white">Boaster</h3>
-        <p class="text-sm text-gray-400">FNATIC</p>
-      </div>
-
-      <!-- Botón de estadísticas -->
-      <button
-        class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
-        (click)="showPlayerDetails('Player2')"
-      >
-        Ver Estadísticas
-      </button>
-    </div>
-
-    <!-- Añade más tarjetas según sea necesario -->
   </div>
+  
 </div>
