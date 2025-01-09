@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
+import { HeaderComponent } from "../shared/header/header.component";
 
 @Component({
   selector: 'app-jugadores',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeaderComponent],
   templateUrl: './jugadores.component.html',
   styleUrl: './jugadores.component.scss'
 })

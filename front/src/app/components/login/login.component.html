@@ -1,46 +1,4 @@
-<div>
-  <header
-    class="bg-gray-800 text-white py-4 px-6 flex items-center justify-between"
-  >
-    <!-- Logo -->
-    <div class="flex items-center">
-      <img
-        src="../../../assets/logos/fantasy-h.svg"
-        alt="Logo"
-        class="w-10 h-10 mr-3"
-      />
-    </div>
-
-    <!-- Botones de navegación -->
-    <nav class="hidden md:flex gap-6">
-      <button
-        (click)="inicio()"
-        class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
-      >
-        Inicio
-      </button>
-      <button
-        (click)="jugadores()"
-        class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
-      >
-        Jugadores
-      </button>
-      <button
-        class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
-      >
-        Reglas
-      </button>
-    </nav>
-
-    <!-- Botón de Login -->
-    <button
-      (click)="login()"
-      class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
-    >
-      Login
-    </button>
-  </header>
-</div>
+<app-header></app-header>
 <div class="flex justify-center items-center h-screen bg-black px-4">
   <form class="w-full max-w-md p-6">
     <!-- Encabezado -->

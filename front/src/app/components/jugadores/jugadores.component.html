@@ -1,44 +1,5 @@
 <!-- Header -->
-<header
-  class="bg-gray-800 text-white py-4 px-6 flex items-center justify-between"
->
-  <!-- Logo -->
-  <div class="flex items-center">
-    <img
-      src="../../../assets/logos/fantasy-h.svg"
-      alt="Logo"
-      class="w-10 h-10 mr-3"
-    />
-  </div>
-
-  <!-- Botones de navegación -->
-  <nav class="hidden md:flex gap-6">
-    <button
-      (click)="inicio()"
-      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
-    >
-      Inicio
-    </button>
-    <button
-      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
-    >
-      Jugadores
-    </button>
-    <button
-      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
-    >
-      Reglas
-    </button>
-  </nav>
-
-  <!-- Botón de Login -->
-  <button
-    (click)="login()"
-    class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
-  >
-    Login
-  </button>
-</header>
+<app-header></app-header>
 
 <!-- Main Content -->
 <div class="bg-black text-white px-6 py-8 h-screen">
@@ -95,19 +56,19 @@
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
     <!-- Tarjeta de jugador -->
     <div
-      class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-row items-center md:flex-col md:items-stretch"
+      class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-row items-center sm:flex-col sm:items-stretch"
     >
       <!-- Foto -->
       <img
-        src="../../../assets/imagenes/player1.jpg"
+        src="../../../assets/jugadores/benji.svg"
         alt="Player"
-        class="w-20 h-20 rounded-full mr-4 md:mr-0 md:mb-4 object-cover"
+        class="w-20 h-20 rounded-full mr-4 sm:mr-0 sm:mb-4 object-cover"
       />
 
       <!-- Datos del jugador -->
       <div class="flex-1">
-        <h3 class="text-lg font-bold mb-1 text-white">Jugador 1</h3>
-        <p class="text-sm text-gray-400">Equipo: Team 1</p>
+        <h3 class="text-lg font-bold mb-1 text-white">Benjifishy</h3>
+        <p class="text-sm text-gray-400">Team Heretics</p>
       </div>
 
       <!-- Botón de estadísticas -->
@@ -121,19 +82,19 @@
 
     <!-- Repite esta tarjeta para otros jugadores -->
     <div
-      class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-row items-center md:flex-col md:items-stretch"
+      class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-row items-center sm:flex-col sm:items-stretch"
     >
       <!-- Foto -->
       <img
-        src="../../../assets/imagenes/player2.jpg"
+        src="../../../assets/jugadores/boaster.svg"
         alt="Player"
-        class="w-20 h-20 rounded-full mr-4 md:mr-0 md:mb-4 object-cover"
+        class="w-20 h-20 rounded-full mr-4 sm:mr-0 sm:mb-4 object-cover"
       />
 
       <!-- Datos del jugador -->
       <div class="flex-1">
-        <h3 class="text-lg font-bold mb-1 text-white">Jugador 2</h3>
-        <p class="text-sm text-gray-400">Equipo: Team 2</p>
+        <h3 class="text-lg font-bold mb-1 text-white">Boaster</h3>
+        <p class="text-sm text-gray-400">FNATIC</p>
       </div>
 
       <!-- Botón de estadísticas -->

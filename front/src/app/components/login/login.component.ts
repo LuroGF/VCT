@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { HeaderComponent } from "../shared/header/header.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule,],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule, HeaderComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })

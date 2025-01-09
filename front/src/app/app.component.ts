@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { StartComponent } from './components/start/start.component';
+import { StartComponent } from './components/shared/start/start.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LanguageService } from './services/language/language.service';
 

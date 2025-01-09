@@ -1,0 +1,89 @@
+<header class="bg-gray-800 text-white py-4 px-6 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img
+        src="../../../assets/logos/fantasy-h.svg"
+        alt="Logo"
+        class="w-28 h-10 mr-3"
+      />
+    </div>
+  
+    <!-- Menú Hamburguesa para Móviles -->
+    <div class="md:hidden">
+      <button
+        (click)="toggleMenu()"
+        class="text-white text-2xl focus:outline-none"
+      >
+        &#9776; <!-- Ícono de hamburguesa -->
+      </button>
+    </div>
+  
+    <!-- Navegación Desktop -->
+    <nav class="hidden md:flex gap-6">
+      <button
+        (click)="inicio()"
+        class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+      >
+        Inicio
+      </button>
+      <button
+        (click)="jugadores()"
+        class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+      >
+        Jugadores
+      </button>
+      <button
+        class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+      >
+        Reglas
+      </button>
+    </nav>
+  
+    <!-- Botón de Login -->
+    <button
+      (click)="login()"
+      class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition hidden md:flex "
+    >
+      Login
+    </button>
+  </header>
+  
+  <!-- Menú Lateral para Móviles -->
+  <div
+  class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white transform transition-transform duration-300 ease-in-out"
+  [class.-translate-x-full]="!menuOpen"
+  [class.translate-x-0]="menuOpen"
+>
+  <button
+    (click)="toggleMenu()"
+    class="absolute top-4 right-4 text-2xl focus:outline-none"
+  >
+    &times; <!-- Ícono de cerrar -->
+  </button>
+  <nav class="flex flex-col mt-16 space-y-4 px-6">
+    <button
+      (click)="inicio(); toggleMenu()"
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Inicio
+    </button>
+    <button
+      (click)="jugadores(); toggleMenu()"
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Jugadores
+    </button>
+    <button
+      (click)=" toggleMenu()"
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Reglas
+    </button>
+    <button
+      (click)="login(); toggleMenu()"
+      class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
+    >
+      Login
+    </button>
+  </nav>
+</div>
