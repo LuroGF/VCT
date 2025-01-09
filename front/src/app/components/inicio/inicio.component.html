@@ -24,12 +24,12 @@
 
     <!-- Botones de navegación -->
     <nav class="hidden md:flex gap-6">
-      <button
+      <button (click)="inicio()"
         class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
       >
         Inicio
       </button>
-      <button
+      <button (click)="jugadores()"
         class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
       >
         Jugadores
@@ -43,6 +43,7 @@
 
     <!-- Botón de Login -->
     <button
+      (click)="login()"
       class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
     >
       Login

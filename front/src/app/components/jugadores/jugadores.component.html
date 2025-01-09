@@ -1,0 +1,150 @@
+<!-- Header -->
+<header
+  class="bg-gray-800 text-white py-4 px-6 flex items-center justify-between"
+>
+  <!-- Logo -->
+  <div class="flex items-center">
+    <img
+      src="../../../assets/logos/fantasy-h.svg"
+      alt="Logo"
+      class="w-10 h-10 mr-3"
+    />
+  </div>
+
+  <!-- Botones de navegación -->
+  <nav class="hidden md:flex gap-6">
+    <button
+      (click)="inicio()"
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Inicio
+    </button>
+    <button
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Jugadores
+    </button>
+    <button
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Reglas
+    </button>
+  </nav>
+
+  <!-- Botón de Login -->
+  <button
+    (click)="login()"
+    class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
+  >
+    Login
+  </button>
+</header>
+
+<!-- Main Content -->
+<div class="bg-black text-white px-6 py-8 h-screen">
+  <!-- Buscador -->
+  <div class="mb-6">
+    <input
+      type="text"
+      placeholder="Buscar jugador..."
+      class="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-red-600"
+    />
+  </div>
+
+  <!-- Botones de Filtro -->
+  <div class="flex gap-4 mb-6">
+    <button
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Duelista
+    </button>
+    <button
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Iniciador
+    </button>
+    <button
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Smoker
+    </button>
+    <button
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Centinela
+    </button>
+    <button
+      class="text-sm px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 transition"
+    >
+      Flex
+    </button>
+  </div>
+
+  <!-- Selector de Equipos -->
+  <div class="mb-6">
+    <select
+      class="w-full p-3 border border-gray-700 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-red-600"
+    >
+      <option value="">Seleccionar equipo...</option>
+      <option value="team1">Equipo 1</option>
+      <option value="team2">Equipo 2</option>
+      <option value="team3">Equipo 3</option>
+    </select>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Tarjeta de jugador -->
+    <div
+      class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-row items-center md:flex-col md:items-stretch"
+    >
+      <!-- Foto -->
+      <img
+        src="../../../assets/imagenes/player1.jpg"
+        alt="Player"
+        class="w-20 h-20 rounded-full mr-4 md:mr-0 md:mb-4 object-cover"
+      />
+
+      <!-- Datos del jugador -->
+      <div class="flex-1">
+        <h3 class="text-lg font-bold mb-1 text-white">Jugador 1</h3>
+        <p class="text-sm text-gray-400">Equipo: Team 1</p>
+      </div>
+
+      <!-- Botón de estadísticas -->
+      <button
+        class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
+        (click)="showPlayerDetails('Player1')"
+      >
+        Ver Estadísticas
+      </button>
+    </div>
+
+    <!-- Repite esta tarjeta para otros jugadores -->
+    <div
+      class="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-row items-center md:flex-col md:items-stretch"
+    >
+      <!-- Foto -->
+      <img
+        src="../../../assets/imagenes/player2.jpg"
+        alt="Player"
+        class="w-20 h-20 rounded-full mr-4 md:mr-0 md:mb-4 object-cover"
+      />
+
+      <!-- Datos del jugador -->
+      <div class="flex-1">
+        <h3 class="text-lg font-bold mb-1 text-white">Jugador 2</h3>
+        <p class="text-sm text-gray-400">Equipo: Team 2</p>
+      </div>
+
+      <!-- Botón de estadísticas -->
+      <button
+        class="text-sm px-4 py-2 bg-red-800 rounded hover:bg-red-900 transition"
+        (click)="showPlayerDetails('Player2')"
+      >
+        Ver Estadísticas
+      </button>
+    </div>
+
+    <!-- Añade más tarjetas según sea necesario -->
+  </div>
+</div>

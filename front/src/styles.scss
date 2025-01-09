@@ -18,9 +18,9 @@
   animation: fade-in 2s ease-in-out;
 }
 
-html,
-body {
-  height: 100%;
+html, body {
   margin: 0;
-  overflow: hidden; /* Evita el scroll */
+  padding: 0;
+  height: 100%; /* Permite que el body ocupe todo el alto */
+  overflow: auto; /* Activa el scroll si el contenido excede */
 }

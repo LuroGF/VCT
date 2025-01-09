@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,9 @@ import { RouterModule } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   showLogo: boolean = true;
-
+  
+  constructor(private route: Router) { }
+  
   ngOnInit() {
     this.quitarLogo()
   }
@@ -21,5 +23,18 @@ export class LoginComponent implements OnInit {
     setTimeout(() => {
       this.showLogo = false;
     }, 5000);
+  }
+  
+  login(){
+    this.route.navigate(['/login']);
+  }
+  jugadores(){
+    this.route.navigate(['/jugadores']);
+  }
+  inicio(){
+    this.route.navigate(['/']);
+  }
+  registro() {
+    this.route.navigate(['/registro']);
   }
 }
