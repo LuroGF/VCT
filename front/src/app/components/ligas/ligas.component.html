@@ -1,0 +1,116 @@
+<div class="min-h-screen bg-black text-white flex">
+  <!-- Menú Lateral (pantallas grandes) -->
+  <aside
+    class="hidden lg:flex flex-col w-64 bg-gray-900 py-6 px-4 fixed h-full"
+  >
+    <div class="space-y-6">
+      <button class="flex items-center gap-4 text-white">
+        <i class="fas fa-newspaper text-2xl"></i>
+        <span class="text-lg">Noticias</span>
+      </button>
+      <button class="flex items-center gap-4 text-white">
+        <i class="fas fa-tv text-2xl"></i>
+        <span class="text-lg">VCT</span>
+      </button>
+      <button class="flex items-center gap-4 text-red-500">
+        <i class="fas fa-tshirt text-2xl"></i>
+        <span class="text-lg text-white">Fantasy</span>
+      </button>
+      <button class="flex items-center gap-4 text-white">
+        <i class="fas fa-trophy text-2xl"></i>
+        <span class="text-lg">Resultados</span>
+      </button>
+      <button class="flex items-center gap-4 text-white">
+        <i class="fas fa-ellipsis-h text-2xl"></i>
+        <span class="text-lg">Más</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Contenido Principal -->
+  <div class="flex-1 flex flex-col lg:ml-64">
+    <div class="flex-1 px-4 pt-6 pb-20">
+      <!-- Mis Ligas -->
+      <h2 class="text-2xl font-bold text-center mb-6">MIS LIGAS</h2>
+      <button
+        class="w-full py-3 border border-white rounded-lg text-white font-bold hover:bg-gray-800 transition mb-8"
+      >
+        + Nueva liga
+      </button>
+
+      <!-- Resultados -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!-- COGER ESTA API PARA RECOGER LOS RESULTADOS https://github.com/axsddlr/vlrggapi -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+
+      <h2 class="text-2xl font-bold text-center mb-6">RESULTADOS</h2>
+      <div class="space-y-4">
+        <!-- Resultado Individual -->
+        <div
+          class="bg-gray-800 py-3 px-4 rounded-lg flex items-center justify-between"
+        >
+          <div class="flex items-center gap-4">
+            <img
+              src="https://via.placeholder.com/40"
+              alt="BBL"
+              class="w-10 h-10 object-contain"
+            />
+            <span class="text-lg font-bold">BBL</span>
+          </div>
+          <div class="text-center">
+            <span class="text-red-500 font-bold text-lg block">18:00</span>
+            <span class="text-gray-400 text-sm">23 Feb</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-lg font-bold">GX</span>
+            <img
+              src="https://via.placeholder.com/40"
+              alt="GX"
+              class="w-10 h-10 object-contain"
+            />
+          </div>
+        </div>
+        <!-- Más resultados aquí -->
+      </div>
+
+      <!-- Botón Ver Más -->
+      <button
+        class="mt-6 w-full py-3 bg-gray-800 text-white font-bold rounded-lg hover:bg-gray-700 transition"
+      >
+        Ver más resultados
+      </button>
+    </div>
+
+    <!-- Footer Fijo -->
+    <footer
+      class="bg-white text-gray-400 fixed bottom-0 left-0 w-full py-4 shadow-md z-10 md:hidden"
+    >
+      <div class="flex justify-around items-center">
+        <button class="flex flex-col items-center">
+          <i class="fas fa-newspaper text-xl"></i>
+          <span class="text-sm">Noticias</span>
+        </button>
+        <button class="flex flex-col items-center">
+          <i class="fas fa-tv text-xl"></i>
+          <span class="text-sm">VCT</span>
+        </button>
+        <button class="flex flex-col items-center">
+          <i class="fas fa-tshirt text-xl"></i>
+          <span class="text-sm">Fantasy</span>
+        </button>
+        <button class="flex flex-col items-center">
+          <i class="fas fa-trophy text-xl"></i>
+          <span class="text-sm">Resultados</span>
+        </button>
+        <button class="flex flex-col items-center">
+          <i class="fas fa-ellipsis-h text-xl"></i>
+          <span class="text-sm">Más</span>
+        </button>
+      </div>
+    </footer>
+  </div>
+</div>
