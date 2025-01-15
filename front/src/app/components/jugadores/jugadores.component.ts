@@ -4,6 +4,8 @@ import { Router, RouterModule } from '@angular/router';
 import { HeaderComponent } from '../shared/header/header.component';
 import { Jugadores } from '../../models/interfaces/Jugadores';
 import { FormsModule } from '@angular/forms';
+import { ApiService } from '../../services/api.service';
+import { StatsSegment } from '../../models/interfaces/Estadisticas';
 
 @Component({
   selector: 'app-jugadores',
@@ -75,6 +77,13 @@ export class JugadoresComponent {
   public searchQuery: string = ''; // Consulta de búsqueda
   public availableTeams: string[] = []; // Equipos disponibles
   public selectedTeam: string = ''; // Equipo seleccionado
+  public estadisticas: StatsSegment[] = [];
+  errorMessage: string = '';
+  isLoading: boolean = true;
+
+
+
+
   constructor(private route: Router) {
     this.populateAvailableTeams();
   }
@@ -115,3 +124,123 @@ export class JugadoresComponent {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export class StatsComponent implements OnInit {
+//   stats: StatsSegment[] = [];
+//   errorMessage: string = '';
+//   isLoading: boolean = true;
+
+//   // Parámetros por defecto
+//   region: string = 'na';
+//   timespan: string = '30';
+
+//   constructor(private apiService: ApiService) { }
+
+//   ngOnInit(): void {
+//     this.fetchStats();
+//   }
+
+//   fetchStats(): void {
+//     this.isLoading = true;
+//     this.apiService.getStats(this.region, this.timespan).subscribe({
+//       next: (response) => {
+//         if (response.data.status === 200) {
+//           this.stats = response.data.segments;
+//         } else {
+//           this.errorMessage = `Error: Status ${response.data.status}`;
+//         }
+//         this.isLoading = false;
+//       },
+//       error: (error) => {
+//         this.errorMessage = error.message;
+//         this.isLoading = false;
+//       }
+//     });
+//   }
+
+//   updateParams(newRegion: string, newTimespan: string): void {
+//     this.region = newRegion;
+//     this.timespan = newTimespan;
+//     this.fetchStats();
+//   }
+// }
+
+
+
+// HTML
+
+// <div>
+//   <h2>Estadísticas de Jugadores</h2>
+
+//   <!-- Opcional: Formulario para cambiar región y timespan -->
+//   <form (ngSubmit)="updateParams(regionInput.value, timespanInput.value)">
+//     <label for="region">Región:</label>
+//     <input id="region" #regionInput type="text" placeholder="e.g., na">
+
+//     <label for="timespan">Periodo (días):</label>
+//     <input id="timespan" #timespanInput type="text" placeholder="e.g., 30">
+
+//     <button type="submit">Actualizar</button>
+//   </form>
+
+//   <div *ngIf="isLoading">
+//     <p>Cargando estadísticas...</p>
+//   </div>
+
+//   <div *ngIf="errorMessage">
+//     <p>Error: {{ errorMessage }}</p>
+//   </div>
+
+//   <div *ngIf="!isLoading && !errorMessage">
+//     <table>
+//       <thead>
+//         <tr>
+//           <th>Jugador</th>
+//           <th>Organización</th>
+//           <th>Rating</th>
+//           <th>Combat Score Promedio</th>
+//           <th>K/D</th>
+//           <th>Kills/Assists/SV%</th>
+//           <th>Daño Promedio por Ronda</th>
+//           <th>Kills/Ronda</th>
+//           <th>Assists/Ronda</th>
+//           <th>FK/Ronda</th>
+//           <th>FD/Ronda</th>
+//           <th>HS%</th>
+//           <th>Clutch Success%</th>
+//         </tr>
+//       </thead>
+//       <tbody>
+//         <tr *ngFor="let player of stats">
+//           <td>{{ player.player }}</td>
+//           <td>{{ player.org }}</td>
+//           <td>{{ player.rating }}</td>
+//           <td>{{ player.average_combat_score }}</td>
+//           <td>{{ player.kill_deaths }}</td>
+//           <td>{{ player.kill_assists_survived_traded }}</td>
+//           <td>{{ player.average_damage_per_round }}</td>
+//           <td>{{ player.kills_per_round }}</td>
+//           <td>{{ player.assists_per_round }}</td>
+//           <td>{{ player.first_kills_per_round }}</td>
+//           <td>{{ player.first_deaths_per_round }}</td>
+//           <td>{{ player.headshot_percentage }}</td>
+//           <td>{{ player.clutch_success_percentage }}</td>
+//         </tr>
+//       </tbody>
+//     </table>
+//   </div>
+// </div>
