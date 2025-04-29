@@ -1,4 +1,3 @@
-<!-- Logo -->
 <div class="overflow-hidden" *ngIf="showLogo">
   <div class="flex justify-center items-center h-screen bg-black">
     <img
@@ -9,12 +8,9 @@
   </div>
 </div>
 <div *ngIf="!showLogo">
-  <!-- Header -->
   <app-header></app-header>
 
-  <!-- Main Content -->
   <div class="bg-black text-white flex min-h-screen md:flex-row">
-    <!-- Text Section -->
     <div class="flex-1 flex-col w-2/3 px-4 py-4">
       <div>
         <h1 class="text-4xl font-bold mb-6">Bienvenido a VCT TV</h1>
@@ -30,7 +26,6 @@
       </div>
     </div>
 
-    <!-- Image Section -->
     <div class="hidden md:block w-1/3 h-auto">
       <img
         src="../../../assets/imagenes/madrid.svg"
@@ -40,3 +35,24 @@
     </div>
   </div>
 </div>
+<!-- <header class="header fixed-top">
+
+</header>
+<main class="main">
+  <section>
+    <div class="col-12 my-auto mx-auto video-section embed-responsive embed-responsive-1by1">
+      <video id="video" class="d-none d-sm-block" loop autoplay play playsinline preload="auto" muted src=""></video>
+      <div class="container-info">
+        <div class="col-12 col-lg-6 my-sm-auto download-info-container">
+          <h1 id="titleFantasy">Bienvenido a VCT Fantasy</h1>
+          <div class="spacer-48 d-none d-md-block"></div>
+          <p id="p-1-subtitle">Crea tu equipo de ensueño con los mejores profesionales de la VCT.</p>
+          <p id="p-12-subtitle">¡Compite contra tus amigos y demuestra quién es el mejor manager!</p>
+          <button class="text-lg bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded-lg">
+          ¡Descubrelo YA!
+        </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main> -->
